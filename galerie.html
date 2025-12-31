@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galerie Photos | Domaine de la Basse Bobinière</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .gallery-header {
+            height: 50vh;
+            background-image: url('assets/c2f505_74c38637b03541b693ecd55ad2ebd978~mv2.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .gallery-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .gallery-header h1 {
+            position: relative;
+            z-index: 1;
+            font-size: 3.5rem;
+            color: white;
+        }
+
+        .gallery-section {
+            padding: 4rem 0;
+        }
+
+        .gallery-masonry {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            height: 300px;
+            /* Fixed height for uniform grid, or use masonry js for true masonry */
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html#gites">Nos Gîtes</a></li>
+                <li><a href="index.html#chambres">Chambres d'hôtes</a></li>
+                <li><a href="activites.html">Activités</a></li>
+                <li><a href="galerie.html" class="active">Galerie</a></li>
+                <li><a href="index.html#contact" class="btn-primary">Réserver</a></li>
+            </ul>
+            <a href="index.html" class="logo">
+                <img src="assets/LOGO DLBB CHOIX.png" alt="Domaine de la Basse Bobinière" style="height: 60px;">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="gallery-header">
+        <div class="container">
+            <h1>Galerie Photos</h1>
+            <p style="position: relative; z-index: 1; font-size: 1.2rem; margin-top: 1rem;">Instants de vie au Domaine
+            </p>
+        </div>
+    </header>
+
+    <!-- Gallery Grid -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-masonry">
+                <!-- Image 1: Landscape/Lake -->
+                <div class="gallery-item">
+                    <img src="assets/c2f505_74c38637b03541b693ecd55ad2ebd978~mv2.jpg" alt="Le Lac">
+                    <div class="gallery-overlay">Le Lac et la Nature</div>
+                </div>
+                <!-- Image 2: Interior -->
+                <div class="gallery-item">
+                    <img src="assets/c2f505_1afbb450cde64ce6b190ca9b2d7d34d1~mv2.jpg" alt="Intérieur Pierre">
+                    <div class="gallery-overlay">Charme de la Pierre</div>
+                </div>
+                <!-- Image 3: Animals/Cows (Placeholder) -->
+                <div class="gallery-item">
+                    <img src="assets/c2f505_e29aaa7b26b040179800fc9834677289~mv2.jpg" alt="Animaux">
+                    <div class="gallery-overlay">Nos Animaux</div>
+                </div>
+                <!-- Image 4: Food (Placeholder) -->
+                <div class="gallery-item">
+                    <img src="assets/c2f505_513c13c6601241259d3d41eaa495285f~mv2.jpg" alt="Cuisine">
+                    <div class="gallery-overlay">Cuisine Gourmande</div>
+                </div>
+                <!-- Image 5: Garden -->
+                <div class="gallery-item">
+                    <img src="assets/c2f505_a090fef8cf3345779fb62d973e0cc6b8~mv2.jpg" alt="Jardin">
+                    <div class="gallery-overlay">Le Jardin Fleuri</div>
+                </div>
+                <!-- Image 6: Room -->
+                <div class="gallery-item">
+                    <img src="assets/c2f505_3e040a6735044b95b2d74faf85740943~mv2.jpg" alt="Chambre">
+                    <div class="gallery-overlay">Douceur des Chambres</div>
+                </div>
+                <!-- Image 7: Exterior -->
+                <div class="gallery-item">
+                    <img src="assets/c2f505_6e5df955894e4e3ca1b762d0ba751bd2~mv2.jpg" alt="Extérieur">
+                    <div class="gallery-overlay">Détente au Soleil</div>
+                </div>
+                <!-- Image 8: Detail -->
+                <div class="gallery-item">
+                    <img src="assets/c2f505_7b7eab6feaca43ec86e078bcdbe38db2~mv2.jpg" alt="Détail">
+                    <div class="gallery-overlay">Détails Authentiques</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2024 Domaine de la Basse Bobinière</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Activités & Services | Domaine de la Basse Bobinière</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .activities-header {
+            height: 50vh;
+            background-image: url('assets/hero-bg.png');
+            /* Fallback or specific image */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .activities-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .activities-header h1 {
+            position: relative;
+            z-index: 1;
+            font-size: 3.5rem;
+            color: white;
+        }
+
+        .activity-detail-section {
+            padding: 4rem 0;
+        }
+
+        .activity-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 6rem;
+        }
+
+        .activity-row.reverse {
+            direction: rtl;
+        }
+
+        .activity-row.reverse .activity-text {
+            direction: ltr;
+        }
+
+        .activity-img-large {
+            height: 400px;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .activity-img-large img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Specific override for icon in large container on detail page */
+        .activity-img-large.icon-container-large {
+            height: 400px;
+            /* Match the image height */
+            font-size: 8rem;
+            /* Larger icon */
+            /* Flex properties are handled in style.css with !important */
+        }
+
+        .price-box {
+            background: #f9f7f2;
+            padding: 1.5rem;
+            border-radius: var(--radius-sm);
+            margin-top: 1.5rem;
+            border-left: 4px solid var(--color-primary);
+        }
+
+        .price-box h4 {
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html#gites">Nos Gîtes</a></li>
+                <li><a href="index.html#chambres">Chambres d'hôtes</a></li>
+                <li><a href="activites.html" class="active">Activités</a></li>
+                <li><a href="galerie.html">Galerie</a></li>
+                <li><a href="index.html#contact" class="btn-primary">Réserver</a></li>
+            </ul>
+            <a href="index.html" class="logo">
+                <img src="assets/LOGO DLBB CHOIX.png" alt="Domaine de la Basse Bobinière" style="height: 60px;">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="activities-header">
+        <div class="container">
+            <h1>Activités & Services</h1>
+            <p style="position: relative; z-index: 1; font-size: 1.2rem; margin-top: 1rem;">Tout pour un séjour
+                inoubliable en Vendée</p>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <section class="activity-detail-section">
+        <div class="container">
+
+            <!-- Car Rental -->
+            <div class="activity-row" id="location">
+                <div class="activity-img-large">
+                    <img src="assets/dacia.jpg" alt="Dacia Duster">
+                </div>
+                <div class="activity-text">
+                    <h2>Location de Voiture</h2>
+                    <p>Pour faciliter vos déplacements et vous permettre de découvrir la région en toute liberté, nous
+                        mettons à votre disposition notre <strong>Dacia Duster</strong>.</p>
+                    <p>Idéal pour les routes de campagne comme pour les escapades vers la côte vendéenne.</p>
+
+                    <div class="price-box">
+                        <h4>Tarifs</h4>
+                        <p><strong>25€</strong> / journée</p>
+                        <p><strong>150€</strong> / semaine</p>
+                        <p style="font-size: 0.9rem; margin-top: 0.5rem; color: #666;">Assurance comprise. Kilométrage
+                            illimité.</p>
+                    </div>
+
+                    <a href="index.html#contact" class="btn-primary" style="margin-top: 2rem;">Réserver le véhicule</a>
+                </div>
+            </div>
+
+            <!-- Bikes -->
+            <div class="activity-row reverse" id="velos">
+                <div class="activity-img-large icon-container-large">
+                    <i class="ph ph-bicycle"></i>
+                </div>
+                <div class="activity-text">
+                    <h2>Prêt de Vélos</h2>
+                    <p>Le bocage vendéen regorge de sentiers et de petites routes agréables à parcourir à vélo. C'est
+                        pourquoi nous vous prêtons gracieusement des vélos pour toute la famille.</p>
+                    <p>Des modèles pour adultes et pour enfants sont disponibles sur demande.</p>
+
+                    <div class="price-box">
+                        <h4>Gratuit</h4>
+                        <p>Inclus dans votre séjour.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Breakfast -->
+            <div class="activity-row" id="dej">
+                <div class="activity-img-large icon-container-large">
+                    <i class="ph ph-coffee"></i>
+                </div>
+                <div class="activity-text">
+                    <h2>Petits Déjeuners Gourmands</h2>
+                    <p>Pour bien commencer la journée, nous vous proposons un petit déjeuner complet composé de produits
+                        frais et locaux.</p>
+                    <p>Pains, viennoiseries, confitures maison, jus de fruits... tout est préparé avec soin pour votre
+                        plaisir.</p>
+
+                    <div class="price-box">
+                        <h4>Sur demande</h4>
+                        <p>À réserver la veille.</p>
+                        <p style="font-size: 0.9rem; margin-top: 0.5rem; color: #666;">Inclus pour les chambres d'hôtes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2024 Domaine de la Basse Bobinière</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

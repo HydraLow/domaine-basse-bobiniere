@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Le Gîte Familial | Domaine de la Basse Bobinière</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        /* Specific styles for the detail page */
+        .gite-header {
+            height: 60vh;
+            background-image: url('assets/c2f505_74c38637b03541b693ecd55ad2ebd978~mv2.jpg');
+            /* Using a real image */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 4rem;
+        }
+
+        .gite-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7));
+        }
+
+        .gite-title {
+            position: relative;
+            z-index: 1;
+            color: white;
+            text-align: center;
+            width: 100%;
+        }
+
+        .gite-title h1 {
+            color: white;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .gite-details {
+            padding: 4rem 0;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+        }
+
+        .amenities-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .amenity-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--color-text);
+            font-size: 1rem;
+        }
+
+        .amenity-item i {
+            font-size: 1.5rem;
+            color: var(--color-primary);
+        }
+
+        .booking-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius-md);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 100px;
+        }
+
+        .price-tag {
+            font-size: 2rem;
+            color: var(--color-primary);
+            font-family: var(--font-heading);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .price-tag span {
+            font-size: 1rem;
+            color: var(--color-text-light);
+            font-weight: 400;
+            font-family: var(--font-body);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 4rem;
+        }
+
+        .gallery-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-img:hover {
+            transform: scale(1.02);
+        }
+
+        @media (max-width: 768px) {
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gite-header h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html#gites">Nos Gîtes</a></li>
+                <li><a href="index.html#chambres">Chambres d'hôtes</a></li>
+                <li><a href="activites.html">Activités</a></li>
+                <li><a href="galerie.html">Galerie</a></li>
+                <li><a href="index.html#contact" class="btn-primary">Réserver</a></li>
+            </ul>
+            <a href="index.html" class="logo">
+                <img src="assets/LOGO DLBB CHOIX.png" alt="Domaine de la Basse Bobinière" style="height: 60px;">
+            </a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="gite-header">
+        <div class="container gite-title">
+            <h1>Le Gîte Familial</h1>
+            <p>Espace, confort et convivialité pour toute la tribu</p>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <section class="gite-details">
+        <div class="container">
+            <div class="details-grid">
+
+                <!-- Left Column: Description & Info -->
+                <div class="gite-info">
+                    <h2>Description</h2>
+                    <p>Ce spacieux gîte est conçu pour accueillir confortablement les grandes familles ou les groupes
+                        d'amis. Avec ses murs en pierres apparentes et ses poutres d'époque, il allie le charme de
+                        l'ancien au confort moderne.</p>
+                    <p>Vous profiterez d'une grande pièce de vie lumineuse, d'une cuisine entièrement équipée ouverte
+                        sur le salon, et d'un accès direct à votre terrasse privée donnant sur le jardin.</p>
+
+                    <h3>Équipements</h3>
+                    <div class="amenities-list">
+                        <div class="amenity-item"><i class="ph ph-bed"></i> 3 Chambres</div>
+                        <div class="amenity-item"><i class="ph ph-shower"></i> 2 Salles de bain</div>
+                        <div class="amenity-item"><i class="ph ph-cooking-pot"></i> Cuisine équipée</div>
+                        <div class="amenity-item"><i class="ph ph-fire"></i> Cheminée</div>
+                        <div class="amenity-item"><i class="ph ph-wifi-high"></i> Wifi Gratuit</div>
+                        <div class="amenity-item"><i class="ph ph-sun"></i> Terrasse privée</div>
+                        <div class="amenity-item"><i class="ph ph-car"></i> Parking</div>
+                        <div class="amenity-item"><i class="ph ph-t-shirt"></i> Lave-linge</div>
+                    </div>
+
+                    <h3>Galerie Photos</h3>
+                    <div class="gallery-grid">
+                        <!-- Using placeholders/existing images for gallery -->
+                        <img src="assets/c2f505_1afbb450cde64ce6b190ca9b2d7d34d1~mv2.jpg" class="gallery-img"
+                            alt="Interieur">
+                        <img src="assets/c2f505_3e040a6735044b95b2d74faf85740943~mv2.jpg" class="gallery-img"
+                            alt="Chambre">
+                        <img src="assets/c2f505_513c13c6601241259d3d41eaa495285f~mv2.jpg" class="gallery-img"
+                            alt="Cuisine">
+                        <img src="assets/c2f505_6e5df955894e4e3ca1b762d0ba751bd2~mv2.jpg" class="gallery-img"
+                            alt="Salon">
+                    </div>
+                </div>
+
+                <!-- Right Column: Booking Card -->
+                <div class="gite-sidebar">
+                    <div class="booking-card">
+                        <span class="price-tag">120€ <span>/ nuit</span></span>
+                        <p style="margin-bottom: 1.5rem; color: #666;">Capacité : jusqu'à 6 personnes</p>
+
+                        <a href="index.html#contact" class="btn-primary"
+                            style="width: 100%; text-align: center; margin-bottom: 1rem;">Vérifier la disponibilité</a>
+                        <a href="mailto:contact@domaine-basse-bobiniere.com" class="btn-secondary"
+                            style="width: 100%; text-align: center; color: var(--color-primary); border-color: var(--color-primary);">Poser
+                            une question</a>
+
+                        <hr style="margin: 1.5rem 0; border: 0; border-top: 1px solid #eee;">
+
+                        <ul style="font-size: 0.9rem; color: #666;">
+                            <li style="margin-bottom: 0.5rem;">✓ Annulation gratuite jusqu'à 30 jours</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Ménage inclus</li>
+                            <li>✓ Arrivée autonome possible</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2024 Domaine de la Basse Bobinière</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
